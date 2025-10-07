@@ -1,46 +1,155 @@
-# Shop Safety Violation Detection System
+# 🛡️ Shop Safety Violation Detection System
 
-A **real-time video-based safety violation detection system** for shops and retail stores. This system uses **YOLOv8 object detection** to detect potential safety violations and alerts the user with live bounding boxes and violation messages.
+[![Python](https://img.shields.io/badge/Python-3.10+-blue)](https://www.python.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.95-green)](https://fastapi.tiangolo.com/)
+[![OpenCV](https://img.shields.io/badge/OpenCV-4.8+-orange)](https://opencv.org/)
+[![YOLOv8](https://img.shields.io/badge/YOLOv8-Ultralytics-red)](https://docs.ultralytics.com/)
 
----
+A **real-time video-based safety violation detection system** for retail stores using **YOLOv8** and **FastAPI**. This project is designed to enhance shop security by automatically detecting:
 
-## Features
+- 🔫 Guns  
+- 🔪 Knives  
+- 🛒 Shoplifting (hands near items)  
+- 🤼 Fighting (persons in conflict)
 
-- **Detects dangerous items**: Guns, Knives.
-- **Detects Shoplifting**: Hands near objects.
-- **Detects Fighting**: Overlapping persons in the frame.
-- **Live video streaming**: Shows processed video with bounding boxes in real-time.
-- **Violation logging**: Logs all violations with timestamp in `alerts.json`.
-- **Web-based interface**: Start/Stop detection directly from the browser.
-
----
-
-## Advantages
-
-- **Real-time monitoring**: Helps store managers monitor safety without manually watching hours of footage.
-- **Automatic alert system**: Notifies security teams about potential threats immediately.
-- **Visual evidence**: Bounding boxes highlight violations for easy review.
-- **Flexible deployment**: Can process pre-recorded videos or live CCTV feeds.
-- **Customizable**: YOLOv8 model can be trained for additional objects or behaviors.
+The system provides **live video streaming**, **bounding boxes**, and **violation alerts** for immediate monitoring.
 
 ---
 
-## Requirements
+## 🎬 Demo Video
 
-- Python 3.10+
-- OpenCV (`opencv-python`)
-- FastAPI (`fastapi`)
-- Uvicorn (`uvicorn`)
-- Ultralytics YOLOv8 (`ultralytics`)
-- Jinja2 (`jinja2`) for templates
-- A YOLOv8 custom-trained model capable of detecting `gun`, `knife`, `hand`, `person`, and other shop-related objects.
+Click to watch the demo of the system detecting shoplifting and dangerous objects in a sample store video:
+
+[![Watch Demo](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://youtu.be/YOUR_VIDEO_ID)  
+
+Or place a demo video file in `app/static/demo_video.mp4` and access via web interface.
 
 ---
 
-## Installation
+## ⚡ Features
 
-1. Clone the repository:
+- **Real-time detection:** Shows bounding boxes live while the video is being processed.  
+- **Violation alerts:** Displays messages for detected safety violations immediately.  
+- **Logging & reporting:** All violations saved with timestamps in `alerts.json`.  
+- **Web interface:** Simple browser-based start/stop controls.  
+- **Multi-format support:** `.mp4`, `.avi`, `.mov` video uploads.  
+- **Customizable detection:** Swap YOLOv8 weights for other objects as needed.
 
+---
+
+## 🛠️ Tech Stack
+
+- **Python 3.10+** – Core programming language  
+- **FastAPI** – Web server and API framework  
+- **OpenCV** – Video processing and annotation  
+- **Ultralytics YOLOv8** – Object detection model  
+- **Jinja2** – HTML templating for dynamic web pages  
+
+---
+
+## 📐 How It Works
+
+1. **Frame Processing:** Reads each video frame using OpenCV.  
+2. **YOLO Detection:** Detects `person`, `hand`, `gun`, `knife`, and store items.  
+3. **Violation Rules:**
+   - **Gun / Knife:** Draws a red bounding box with label.  
+   - **Shoplifting:** Detects hands near objects; draws bounding boxes and shows "Shoplifting?" label.  
+   - **Fighting:** Detects overlapping persons; shows "Fighting?" label with bounding boxes.  
+4. **Live Streaming:** Frames with bounding boxes are streamed via HTTP to the browser for live feedback.  
+5. **Logging:** All detected violations saved in `alerts.json` for auditing and reporting.  
+
+---
+
+## 📂 Project Structure
+
+shop-safety-detector/
+├── app/
+│ ├── static/ # Processed videos & demo video
+│ ├── templates/ # index.html for web interface
+│ ├── alerts.json # Logged violations
+│ └── detection.py # YOLO detection & streaming logic
+├── models/
+│ └── custom_shop_model.pt # YOLOv8 custom weights
+├── main.py # FastAPI server
+├── requirements.txt # Required Python packages
+└── README.md # Documentation
+
+
+---
+
+## 🚀 Installation & Setup
+
+1. **Clone the repository:**
 ```bash
 git clone https://github.com/yourusername/shop-safety-detector.git
 cd shop-safety-detector
+
+
+---
+
+## 🚀 Installation & Setup
+
+1. **Clone the repository:**
+```bash
+git clone https://github.com/yourusername/shop-safety-detector.git
+cd shop-safety-detector
+
+python -m venv venv
+# Windows
+venv\Scripts\activate
+# Linux / Mac
+source venv/bin/activate
+pip install -r requirements.txt
+python -m uvicorn main:app --reload
+
+💡 Advantages
+
+Automated safety monitoring for retail stores
+
+Reduces human monitoring effort
+
+Real-time visual alerts for immediate action
+
+Provides audit logs for security management
+
+Easily extendable for other objects or live CCTV feeds
+
+🧪 Testing
+
+Add a test video app/static/test_video.mp4.
+
+Upload via the web interface.
+
+Observe live detection of shoplifting, fights, knives, and guns.
+
+Check alerts.json for a complete record of violations.
+
+📊 Future Enhancements
+
+Real-time integration with CCTV cameras
+
+Multi-store monitoring dashboard
+
+Notification system via email or SMS for immediate alerts
+
+AI-based behavior prediction to preempt potential theft
+
+🔗 References
+
+YOLOv8 Documentation
+
+FastAPI Documentation
+
+OpenCV Documentation
+
+📄 License
+
+MIT License © 2025
+
+👤 Author
+
+Kartikey Kushwaha
+BCA | AI & ML Enthusiast | Android & Python Developer
+
+LinkedIn
+ | GitHub
