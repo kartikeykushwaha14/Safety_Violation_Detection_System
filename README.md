@@ -23,7 +23,9 @@ Click to watch the demo of the system detecting shoplifting and dangerous object
 <video src="https://github.com/kartikeykushwaha14/Safety_Violation_Detection_System/blob/main/demo.mp4" controls width="720">
   Your browser does not support the video tag.
 </video>
+<video src="https://user-images.githubusercontent.com/34807427/171149238-3cabeffb-1087-4748-b7ca-1927cd4cf6f8.mp4" controls></video>
 
+https://github.com/kartikeykushwaha14/Safety_Violation_Detection_System/blob/main/demo.mp4
 
 ---
 
