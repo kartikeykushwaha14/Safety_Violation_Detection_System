@@ -81,19 +81,11 @@ shop-safety-detector/
 
 1. **Clone the repository:**
 ```bash
-git clone https://github.com/yourusername/shop-safety-detector.git
-cd shop-safety-detector
-
-
----
-
-## 🚀 Installation & Setup
-
 1. **Clone the repository:**
-```bash
 git clone https://github.com/yourusername/shop-safety-detector.git
 cd shop-safety-detector
 
+2. **Create a virtual environment::**
 python -m venv venv
 # Windows
 venv\Scripts\activate
