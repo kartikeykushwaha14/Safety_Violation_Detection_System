@@ -60,8 +60,8 @@ https://github.com/kartikeykushwaha14/Safety_Violation_Detection_System/blob/226
 
 ## 📂 Project Structure
 
-shop-safety-detector/- 
-├── app/- 
+shop-safety-detector/
+├── app/
 │ ├── static/ # Processed videos & demo video
 │ ├── templates/ # index.html for web interface
 │ ├── alerts.json # Logged violations
