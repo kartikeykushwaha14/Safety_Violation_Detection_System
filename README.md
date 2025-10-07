@@ -20,7 +20,7 @@ The system provides **live video streaming**, **bounding boxes**, and **violatio
 
 Click to watch the demo of the system detecting shoplifting and dangerous objects in a sample store video:
 
-<video src="https://github.com/kartikeykushwaha14/Safety_Violation_Detection_System/blob/main/demo%20(1).mp4" controls width="720">
+<video src="https://github.com/kartikeykushwaha14/Safety_Violation_Detection_System/blob/main/demo.mp4" controls width="720">
   Your browser does not support the video tag.
 </video>
 
