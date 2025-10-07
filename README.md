@@ -102,6 +102,8 @@ source venv/bin/activate
 pip install -r requirements.txt
 python -m uvicorn main:app --reload
 
+```
+
 💡 Advantages
 
 Automated safety monitoring for retail stores
