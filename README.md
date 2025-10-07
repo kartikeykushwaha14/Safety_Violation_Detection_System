@@ -23,6 +23,7 @@ Click to watch the demo of the system detecting shoplifting and dangerous object
 [![Watch Demo](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://github.com/kartikeykushwaha14/Safety_Violation_Detection_System/blob/main/demo%20(1).mp4)
 
 Or place a demo video file in `app/static/demo_video.mp4` and access via web interface.
+[Watch the demo video](https://github.com/kartikeykushwaha14/Safety_Violation_Detection_System/blob/main/demo.mp4)
 
 ---
 
