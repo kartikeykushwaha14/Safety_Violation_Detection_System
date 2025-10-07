@@ -85,18 +85,30 @@ shop-safety-detector/
 git clone https://github.com/yourusername/shop-safety-detector.git
 cd shop-safety-detector
 
-2. **Create a virtual environment::**
+2. **Create a virtual environment:**
 python -m venv venv
 # Windows
 venv\Scripts\activate
 # Linux / Mac
 source venv/bin/activate
+
+3. **Install dependencies:**
 pip install -r requirements.txt
 python -m uvicorn main:app --reload
 
+4. Add YOLOv8 weights in models/ (e.g., custom_shop_model.pt).
+You can train your own dataset using Ultralytics YOLOv8.
+
+5. Run the FastAPI server:
+python -m uvicorn main:app --reload
+
+6. Open in browser: http://127.0.0.1:8000
+
+7. Upload video and click Start Detection. Watch live detections and alerts.
+
 ```
 
-💡 Advantages
+## 💡 Advantages
 
 Automated safety monitoring for retail stores
 
@@ -108,7 +120,7 @@ Provides audit logs for security management
 
 Easily extendable for other objects or live CCTV feeds
 
-🧪 Testing
+## 🧪 Testing
 
 Add a test video app/static/test_video.mp4.
 
@@ -118,7 +130,7 @@ Observe live detection of shoplifting, fights, knives, and guns.
 
 Check alerts.json for a complete record of violations.
 
-📊 Future Enhancements
+## 📊 Future Enhancements
 
 Real-time integration with CCTV cameras
 
@@ -128,7 +140,7 @@ Notification system via email or SMS for immediate alerts
 
 AI-based behavior prediction to preempt potential theft
 
-🔗 References
+## 🔗 References
 
 YOLOv8 Documentation
 
@@ -136,14 +148,12 @@ FastAPI Documentation
 
 OpenCV Documentation
 
-📄 License
+## 📄 License
 
 MIT License © 2025
 
-👤 Author
+## 👤 Author
 
 Kartikey Kushwaha
-BCA | AI & ML Enthusiast | Android & Python Developer
+MCA | AI & ML Enthusiast | Android & Python Developer
 
-LinkedIn
- | GitHub
